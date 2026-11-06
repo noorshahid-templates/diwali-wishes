@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Special Diwali Wish From Smita</title>
+<meta name="theme-color" content="#3D1E5C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<button id="musicBtn" class="music" aria-label="Play music" hidden>♪</button>
+<audio id="bgm" loop preload="none"></audio>
+
+<main>
+<section class="screen" id="gate">
+  <div class="diya big lit" aria-hidden="true"><i class="flame"></i><b class="bowl"></b></div>
+  <h1>A Special Celebration Awaits</h1>
+  <p class="sub">A little surprise is waiting for you.</p>
+  <form id="gateForm" class="stack" autocomplete="off">
+    <label class="sr" for="code">Secret code</label>
+    <input id="code" type="password" placeholder="Enter Secret Code" required>
+    <p id="gateErr" class="err" role="alert"></p>
+    <button class="btn" type="submit">Unlock Your Surprise</button>
+  </form>
+</section>
+
+<section class="screen" id="name">
+  <h2>Before We Celebrate...</h2>
+  <p class="sub">Every beautiful wish deserves a name.</p>
+  <form id="nameForm" class="stack">
+    <p class="sub">Who is this special wish for?</p>
+    <label class="sr" for="nameIn">Your name</label>
+    <input id="nameIn" type="text" maxlength="40" placeholder="Enter Your Name" required>
+    <fieldset><legend>How should we address you?</legend>
+      <label><input type="radio" name="g" value="male"><span>Male</span></label>
+      <label><input type="radio" name="g" value="female"><span>Female</span></label>
+      <label><input type="radio" name="g" value="neutral" checked><span>Prefer not to say</span></label>
+    </fieldset>
+    <p id="nameErr" class="err" role="alert"></p>
+    <button class="btn" type="submit">Continue to Your Surprise</button>
+  </form>
+</section>
+
+<section class="screen" id="reveal">
+  <div class="diya lit" aria-hidden="true"><i class="flame"></i><b class="bowl"></b></div>
+  <h1 id="revealName" class="pop"></h1>
+  <p class="sub">May this festival of lights fill your life with happiness, your heart with peace and your days with beautiful new beginnings.</p>
+  <button class="btn next">Continue</button>
+</section>
+
+<section class="screen" id="gallery">
+  <h2>A Little Piece of My Celebration</h2>
+  <p class="sub">Sharing a little light, happiness and warm wishes with someone special.</p>
+  <div class="photos" id="photos"></div>
+  <button class="btn next">Continue</button>
+</section>
+
+<section class="screen" id="gift">
+  <h2>A Little Gift of Happiness</h2>
+  <p class="sub">Some gifts cannot be wrapped. They are shared through warm wishes, beautiful moments and heartfelt blessings.</p>
+  <button id="giftBox" class="gift" aria-label="Open the gift box"><span class="lid"></span><span class="body"></span></button>
+  <p id="giftMsg" class="card-msg"></p>
+  <button class="btn next">Continue</button>
+</section>
+
+<section class="screen" id="diya">
+  <h2>Light Up Your Happiness</h2>
+  <p class="sub">Every little light carries a beautiful hope.</p>
+  <button id="diyaBtn" class="diya big" aria-label="Light the diya"><i class="flame"></i><b class="bowl"></b></button>
+  <p id="diyaMsg" class="card-msg"></p>
+  <button class="btn next">Continue</button>
+</section>
+
+<section class="screen" id="fortune">
+  <h2>A Little Blessing Just for You</h2>
+  <p class="sub">Every new beginning brings a little hope.</p>
+  <div id="fCard" class="fcard" aria-live="polite"><span>✦</span></div>
+  <button id="fBtn" class="btn">Reveal a Blessing</button>
+  <button class="btn ghost next">Continue</button>
+</section>
+
+<section class="screen" id="letter">
+  <h2>A Little Message From Me</h2>
+  <button id="env" class="env" aria-label="Open the letter"><span class="flap"></span><span class="pocket"></span></button>
+  <article id="paper" class="paper" hidden></article>
+  <button class="btn next" id="letterNext" hidden>Continue</button>
+</section>
+
+<section class="screen" id="wish">
+  <h2>Make a Wish, Let It Shine</h2>
+  <p class="sub">Close your eyes for a moment and send a beautiful wish into the universe.</p>
+  <button id="star" class="star" aria-label="Make a wish">★</button>
+  <p id="wishMsg" class="card-msg"></p>
+  <button class="btn next">Continue</button>
+</section>
+
+<section class="screen" id="final">
+  <div class="gcard" id="gcard">
+    <div class="diya lit sm" aria-hidden="true"><i class="flame"></i><b class="bowl"></b></div>
+    <h2 id="fName"></h2>
+    <p id="fLine"></p>
+    <p class="small">With love and warm wishes,</p>
+    <p class="sig" id="fSig"></p>
+  </div>
+  <div class="row">
+    <button class="btn" id="dl">Download Greeting Card</button>
+    <button class="btn" id="wa">Share on WhatsApp</button>
+    <button class="btn ghost" id="replay">Replay Experience</button>
+  </div>
+  <button class="link" id="edit">Not you? Edit name</button>
+</section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
